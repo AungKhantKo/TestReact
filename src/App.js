@@ -1,39 +1,13 @@
-// App.js
-import React from "react";
-import './App.css';
-// import TestTest from './componets/TestTest'; // ✅ Importing named export
-import Menu from "./Menu";
-import Navbar from "./Navbar";
-import "./cus/css/cus.css"
+import React, { useEffect } from "react";
 
-
-
-class App extends React.Component{
-  render(){
-
-    const ch = {
-      tx: {
-        backgroundColor : 'blue',
-        color : 'white',
-      }
-    }
-
-    return(
-      <div>
-        <Menu>
-          <div style={{backgroundColor : 'pink', color : 'white', height : 150,}}>
-            <h1>Happy Test</h1>
-            <p style={ch.tx}>Component Composition</p>
-          </div>
-        </Menu>
-        <Navbar>
-          <h5>Head Test</h5>
-        </Navbar>
-        <button className='btn'>Yes Click Me</button> 
-        <button className='btn1'>No </button>
-      </div>
-    )
-  }
+const All = () => {
+  useEffect(()=>{
+    const btn = document.getElementById("btn")
+    btn.addEventListener('click', _ => {
+      console.log('yo')
+    })
+  },[])
+  return <button id="btn">On click</button>
 }
 
-export default App;
+export default All;
