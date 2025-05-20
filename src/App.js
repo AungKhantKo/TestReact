@@ -1,34 +1,39 @@
 // App.js
-import logo from './logo.svg';
+import React from "react";
 import './App.css';
-import { One } from './AppCopy'; 
 // import TestTest from './componets/TestTest'; // ✅ Importing named export
+import Menu from "./Menu";
+import Navbar from "./Navbar";
+import "./cus/css/cus.css"
 
-function App() {
-  return (
-    <div class="container">
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
 
-        {/* ✅ Using class component */}
-        
-      </header>     
-    </div>
-    <One/>
-    </div>
-  );
+
+class App extends React.Component{
+  render(){
+
+    const ch = {
+      tx: {
+        backgroundColor : 'blue',
+        color : 'white',
+      }
+    }
+
+    return(
+      <div>
+        <Menu>
+          <div style={{backgroundColor : 'pink', color : 'white', height : 150,}}>
+            <h1>Happy Test</h1>
+            <p style={ch.tx}>Component Composition</p>
+          </div>
+        </Menu>
+        <Navbar>
+          <h5>Head Test</h5>
+        </Navbar>
+        <button className='btn'>Yes Click Me</button> 
+        <button className='btn1'>No </button>
+      </div>
+    )
+  }
 }
 
 export default App;
